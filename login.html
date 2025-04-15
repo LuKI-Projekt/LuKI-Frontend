@@ -6,20 +6,22 @@
   <!-- Layout & Struktur & Design-System laden -->
   <link rel="stylesheet" href="style.css">
   <!--JavaScript laden-->>
-  <script src="script.js" defer></script>
+  <script src="getIn.js" defer></script>
 </head>
 <body>
   <header>
     <h1> Willkommen bei LuKI !</h1>
     <h2> deine lerunterstützende KI </h2>
-    <p> Orange ist meine Farbe 🍊</p>
+    <p> Bitte melde dich an</p>
   </header>
 
   <main>
     <section>
-      <h2> 1. Schritt <h2>
-      <p>Wähle ein aus, was deine Grundlage für die Aufgaben sind</p>
-      <button class="btn-orange" onclick="changeText()">Abschicken</button>
+      <h2> Bitte gib deine E-Mail-Adresse an<h2>
+        <input type="text" id="NutzerMail" placeholder="LuKI@example.de">
+        <button id = "ButtonAnmelden" onclick="textLesen()">Code versenden</button>
+        <!-- kein plan was das tut Ausgabe muss noch abgefangen werden-->
+        <p id="ausgabe"></p>
     </section>
   </main>
 

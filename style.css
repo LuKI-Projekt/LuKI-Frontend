@@ -1,0 +1,63 @@
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+main {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+footer {
+    background-color: var(--color-footer);
+    color: #5a3e26;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+  .btn-orange {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff7f2a;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-orange:hover {
+    background-color: #e96e10;
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+
+  /* 🔶 Design-Grundlage */
+
+:root {
+    --color-primary: #ff7f2a;
+    --color-background: #fff8f0;
+    --color-footer: #ffd1a3;
+    --color-text: #333;
+  
+    --font-main: 'Segoe UI', sans-serif;
+    --font-heading: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-main);
+  }
+  
+  h1, h2 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+  }
+ 

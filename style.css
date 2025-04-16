@@ -41,9 +41,9 @@ footer {
   /* 🔶 Design-Grundlage */
 
 :root {
-    --color-primary: #ff7f2a;
+    --color-primary: #f5b58a;
     --color-background: #fff8f0;
-    --color-footer: #ffd1a3;
+    --color-footer: #c0976e;
     --color-text: #333;
   
     --font-main: 'Segoe UI', sans-serif;
@@ -64,4 +64,15 @@ footer {
     font-family: var(--font-heading);
     color: var(--color-primary);
   }
- 
+
+  #ButtonAnmeldenMail, #ButtonEinmalPasswort{
+    position: fixed;
+      bottom: 30;
+      right: 30;
+    /*font-size: 2vw;  2% der Bildschirmbreite 
+    padding: 1vw 2vw;*/
+  }
+  
+  #ButtonEinmalPasswort, #FeldNutzerPasswort{
+    display: none; /* wird versteckt */
+  }

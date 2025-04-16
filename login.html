@@ -18,8 +18,11 @@
   <main>
     <section>
       <h2> Bitte gib deine E-Mail-Adresse an<h2>
-        <input type="text" id="NutzerMail" placeholder="LuKI@example.de">
-        <button id = "ButtonAnmelden" onclick="textLesen()">Code versenden</button>
+
+        <input type="text" id="FeldNutzerMail" placeholder="LuKI@example.de">
+        <input type="text" id="FeldNutzerPasswort" placeholder="phd3ndFQt">
+        <button id = "ButtonAnmeldenMail" class = "btn-orange" onclick="NutzerInfoAnmeldung()" >Code versenden</button>
+        <button id = "ButtonEinmalPasswort" class= "btn-orange" onclick="PasswortTesten()"> Abschicken </button>
         <!-- kein plan was das tut Ausgabe muss noch abgefangen werden-->
         <p id="ausgabe"></p>
     </section>

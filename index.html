@@ -4,28 +4,47 @@
   <meta charset="UTF-8">
   <title>LuKI</title>
   <!-- Layout & Struktur & Design-System laden -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleIndex.css">
   <!--JavaScript laden-->>
   <script src="script.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1> Willkommen bei LuKI !</h1>
-    <h2> deine lerunterstützende KI </h2>
-    <p> Orange ist meine Farbe 🍊</p>
-  </header>
+  <div class="header">
+    <div class="logo">
+    <img src= "logo.jpg">
+    <h1> LuKI - deine lerunterstützende KI </h1>
+    </div>
+  <div class="header-actions">
+    <!-- Funktions-Buttons -->
+    <button onclick="Speichern()">Speichern</button>
+    <button onclick="Zurück()">Zurück</button>
+    <button onclick="Spaß()">Spaß</button>
+  </div>
+</div>
 
-  <main>
-    <section>
+<div class = "content">
+  <div class="editor">
       <h2> 1. Schritt <h2>
-      <p>Wähle ein aus, was deine Grundlage für die Aufgaben sind</p>
+      Wähle ein aus, was deine Grundlage für die Aufgaben sind
       <button class="btn-orange" onclick="changeText()">Abschicken</button>
-    </section>
-  </main>
+   
+      <h2>Eingabe des Prompts</h2>
+      <textarea id="eingabeFeld" oninput="aktualisiereVorschau()"></textarea>
+    </div>
 
-  <footer>
+  <div class="vorschau">
+    <h2>Vorschau</h2>
+    <div id="vorschauFeld"></div>
+</div>
+</div>
+
+
+<!--   <footer>
     <p>© 2025 LuKI - lernunterstützende KI </p>
     <p> Beate Tangerding und Tristan Kley </p>
-  </footer>
+  </footer> -->
+
+
 </body>
 </html>

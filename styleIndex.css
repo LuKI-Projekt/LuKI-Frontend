@@ -1,0 +1,113 @@
+
+/* Header (Kopfbereich) oben */
+.header {
+    background-color: var(--color-primary);
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  /* Bereich für Logo + Titel */
+.header .logo {
+  align-items: center;
+  display: flex;
+}
+
+.header .logo img {
+  width: 30px; /* Logo-Bild wird auf 30 Pixel Breite festgelegt.*/
+  margin-right: 10px; /*zwischen Bild und Überschrift 10 Pixel */
+}
+
+/* Überschrift ist kompakt und sitzt sauber neben dem Logo.*/
+.header .logo h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+  
+footer {
+    background-color: var(--color-footer);
+    color: #5a3e26;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+  .btn-orange {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff7f2a;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-orange:hover {
+    background-color: #e96e10;
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+
+  /* 🔶 Design-Grundlage */
+
+:root {
+    --color-primary: #f5b58a;
+    --color-background: #fff8f0;
+    --color-footer: #c0976e;
+    --color-text: #333;
+  
+    --font-main: 'Segoe UI', sans-serif;
+    --font-heading: 'Segoe UI', sans-serif;
+  }
+  
+
+  h1 {
+    font-family: var(--font-heading);
+    color: var(--color-background);
+  }
+  
+  h2 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+  }
+
+  /* macht zwei Spalten unter dem Header (berechent die Höhe dafür)*/
+  .content {
+    display: flex;
+    height: calc(100vh - 60px); /* volle Höhe des Bildschirms minus Header */
+  }
+
+
+  .editor, .vorschau {
+    flex: 1;  /* beide spalten bekommen gleichviel plazu*/
+    padding: 20px; /* Inhalt hat 20 Pixel Abstand zum Rand */
+    overflow-y: auto; /* Wenn der Inhalt zu lang wird, erscheint eine Scroll-Leiste nach unten – aber nur wenn nötig.*/
+  }
+
+  .editor {
+    background-color: #f0f0f0; /*Hintergrund für den Editor-Bereich.*/
+    border-right: 2px solid #050000; /* Eine vertikale Trennlinie zwischen Editor und Vorschau, 2 px breit, hellgrau.*/
+  }
+
+  .vorschau {
+    background-color: #fff;
+    white-space: pre-wrap;       /* bricht bei \n und bei zu langen Zeilen */
+  word-wrap: break-word;       /* bricht auch lange Wörter */
+  overflow-wrap: break-word;   /* moderner Standard */
+  }
+ 
+  textarea {
+    flex: 1; /*Jedes textarea nimmt gleich viel Platz ein */
+  padding: 10px;
+  margin: 5px;
+    font-family: monospace;
+    font-size: 1rem;
+  }
+

@@ -58,11 +58,13 @@ footer {
   h1 {
     font-family: var(--font-heading);
     color: var(--color-background);
+    font-size: 2px;
   }
   
   h2 {
     font-family: var(--font-heading);
     color: var(--color-primary);
+    font-size: 3px;
   }
 
   #ButtonAnmeldenMail, #ButtonEinmalPasswort{

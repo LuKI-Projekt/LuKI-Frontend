@@ -7,7 +7,7 @@ function LayoutAnpassungPasswort() {
    
 
     /*
-    Button zum Abschicken und Eingabefeld wird gelöscht
+    Button zum Abschicken und Eingabefeld wird ausgeblendet
     */
     document.getElementById("FeldNutzerMail").style.display = "none";
     document.getElementById("ButtonAnmeldenMail").style.display = "none";

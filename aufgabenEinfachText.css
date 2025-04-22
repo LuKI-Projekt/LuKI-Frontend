@@ -1,0 +1,16 @@
+.aufgabe {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.korrektur {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.richtig {
+    color: green;
+}
+.falsch {
+    color: red;
+}

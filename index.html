@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styleIndex.css">
   <!--JavaScript laden-->>
   <script src="script.js" defer></script>
+  <script src="vorschau.js" defer></script>
 </head>
 
 <body>
@@ -54,13 +55,18 @@
 
      </div>  
 
-
-      <textarea id="eingabeFeld" oninput="aktualisiereVorschau()"></textarea>
+     <!-- Vorschua generieren Button-->
+     <button onclick="erstelleVorschau()">Erstelle Vorschau</button>
+     
+    
+     <textarea id="eingabeFeld" oninput="aktualisiereVorschau()"></textarea>
     </div>
 
   <div class="vorschau">
     <h2>Vorschau</h2>
     <div id="vorschauFeld"></div>
+
+    <div id="AufgabeContainerVorschau"></div>
 </div>
 </div>
 

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styleIndex.css">
   <!--JavaScript laden-->>
   <script src="script.js" defer></script>
-  <script src="vorschau.js" defer></script>
+  <script src="vorschau.js" defer> </script>
 </head>
 
 <body>
@@ -29,43 +29,47 @@
 
     <!--Schritt 1 Elemente -->
       <h2 id= "SchrittEins"> 1. Schritt </h2>
-      <p id="ErklärungSchrittEins ">Wähle aus, was deine Grundlage für die Aufgaben ist. <br>
+      <p id="ErklärungSchrittEins ">Wähle aus, was deine Grundlage für die Aufgaben ist. <br> </p>
 
-      <button id = "ButtonFoto" class="btn-orange" onclick="Foto()">Foto</button>
+      <button id = "ButtonFoto" class="btn-orange" onclick="Foto()">Foto</button >
       <button id = "ButtonBeschreibung" class="btn-orange" onclick="Beschreibung()">Beschreibung</button>
       
       <!--Fürs Bild hochladen-->
-      <input type="file" id="FeldUploadInput" accept="image/*" title="Bild auswählen">
+      <input type="file" id="FeldUploadInput" accept="image/*" title="Bild auswählen" style="display: none;">
       <img id="preview" style="max-width: 200px; display: none;">
     
     <!--Schritt 2 Elemente-->
-      <h2 id="SchrittZwei"> 2. Schritt </h2>
-      <p id="ErklärungSchrittZwei"> Beschreibung ergänzen als Prompt
-      <input type="text" id="FeldNutzerBeschriebungAufgabe" placeholder="Es sollen 8 ähnliche Aufgaben generiert werden.">
-      
+      <h2 id="SchrittZwei"style="display: none;"> 2. Schritt </h2>
+      <p id="ErklärungSchrittZwei" style="display: none;"> Wähle ein Aufgabentyp aus. </p>
+    
       <!--Auswahl des Aufgabentypes-->
-      <div class="dropdown">
+    <div id="dropdownContainer" class="versteckt">
+      <div id="DropdownAufgabe" class="dropdown" >
           <input type="text" class="textBox" placeholder=" Aufgabentyp" readonly>
         <div class = "option">
-          <div onclick="show('Drag und Drop')"> <ion-icon name="add-outline"></ion-icon>Drag and Drop</div>
-         <div onclick="show('Lückentext')"> <ion-icon name="reader-outline"></ion-icon> Lückentext</div>
-         <div onclick="show('Multiple Choice')"> <ion-icon name="list-outline"></ion-icon> Multiple Choice</div>
-         <div onclick="show('Einfache Antwort')"> <ion-icon name="tablet-landscape-outline"></ion-icon> Einfache Antwort</div>
+         <div onclick="show('Drag und Drop'); speicherAufgabenart('Drag'); LayoutNachSchrittZwei()"> <ion-icon name="add-outline"></ion-icon>Drag and Drop</div>
+         <div onclick="show('Lückentext'); speicherAufgabenart('Luecke'); LayoutNachSchrittZwei()"> <ion-icon name="reader-outline"></ion-icon> Lückentext</div>
+         <div onclick="show('Multiple Choice'); speicherAufgabenart('Multi'); LayoutNachSchrittZwei()"> <ion-icon name="list-outline"></ion-icon> Multiple Choice</div>
+         <div onclick="show('Einfache Antwort'); speicherAufgabenart('Einfach'); LayoutNachSchrittZwei()"> <ion-icon name="tablet-landscape-outline"></ion-icon> Einfache Antwort</div>
        </div>
-
      </div>  
+    </div>
 
-     <!-- Vorschua generieren Button-->
-     <button onclick="erstelleVorschau()">Erstelle Vorschau</button>
-     
-    
-     <textarea id="eingabeFeld" oninput="aktualisiereVorschau()"></textarea>
+      <!--Schritt 3 Elemente-->
+  </br>
+      <h2 id="SchrittDrei" style="display: none;"> <br><br> 3. Schritt </h2>
+      <p id="ErklärungSchrittDrei" style="display: none;"> Beschreibung ergänzen als Prompt </p>
+      <input type="text" id="FeldNutzerBeschriebungAufgabe" placeholder="Es sollen 8 ähnliche Aufgaben generiert werden." style="display: none;">
+      <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick="generiereAufgabenKI(); erstelleVorschau()">Aufgaben generieren</button >
+      
+     <!-- Vorschau generieren Button-->
+     <button onclick="erstelleVorschau()" style="display: none;">Erstelle Vorschau </button >
+     <textarea id="eingabeFeld" oninput="aktualisiereVorschau()" style="display: none;"></textarea>
     </div>
 
   <div class="vorschau">
     <h2>Vorschau</h2>
     <div id="vorschauFeld"></div>
-
     <div id="AufgabeContainerVorschau"></div>
 </div>
 </div>

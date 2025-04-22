@@ -5,6 +5,7 @@ var loesungen = ["4"];
 
 function erstelleVorschau() 
 {
+
     const container = document.getElementById('AufgabeContainerVorschau');
 
     for (let i = 0; i < aufgaben.length; i++) {

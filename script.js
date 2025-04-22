@@ -1,4 +1,6 @@
 var pictureNutzer = null;
+var aufgabenart = "";
+
 
 function changeText() {
     document.querySelector('h1').textContent = 'Hallo, JavaScript!';
@@ -16,7 +18,7 @@ function Beschreibung(){
 }
 
 function Foto(){
-    LayoutNachSchrittEinsFoto()
+    LayoutNachSchrittEinsFoto();
     document.getElementById('FeldUploadInput').addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
@@ -25,6 +27,7 @@ function Foto(){
           // Wenn das Bild erfolgreich gelesen wurde, führe diese Funktion aus
           reader.onload = function(e) {
             pictureNutzer = e.target.result;
+            LayoutNachSchrittEinsBeschreibung();
 
             // Das Bild in das <img> Tag einfügen und sichtbar machen
             document.getElementById('preview').src = pictureNutzer;
@@ -34,6 +37,26 @@ function Foto(){
     }
   });
 }
+/*function LayoutStart(){
+    document.getElementById("SchrittEins").style.display = "flex";
+    document.getElementById("ErklärungSchrittEins").style.display = "felx";
+    document.getElementById("ButtonBeschreibung").style.display = "flex";
+    document.getElementById("ButtonFoto").style.display = "flex";
+
+    document.getElementById("ErklärungSchrittEins").style.display = "none";
+    
+    document.getElementById("SchrittZWei").style.display = "none";
+    document.getElementById("ErklärungSchrittZwei").style.display = "none";
+    document.getElementById("DropdownAufgabe").style.display = "none";
+
+    document.getElementById("SchrittDrei").style.display = "none";
+    document.getElementById("ErklärungSchrittDrei").style.display = "none";
+    document.getElementById("FeldNutzerBeschriebungAufgabe").style.display = "none";
+
+    document.getElementById("FeldUploadInput").style.display = "none";
+    document.getElementById("preview").style.display = "none";
+}
+    */
 
 function LayoutNachSchrittEinsFoto(){
    /*
@@ -52,10 +75,39 @@ function LayoutNachSchrittEinsBeschreibung(){
     */
     document.getElementById("ButtonBeschreibung").style.display = "none";
     document.getElementById("ButtonFoto").style.display = "none";
+    
+    document.getElementById("SchrittZwei").style.display = "flex";
+    document.getElementById("ErklärungSchrittZwei").style.display = "flex";
 
-    document.getElementById("ErklärungSchrittEins").style.display = "none";
+    zeigeDropdown();
+   
+}
+
+function LayoutNachSchrittZwei(){
+    document.getElementById("ErklärungSchrittZwei").style.display = "none";
+    document.getElementById("SchrittDrei").style.display = "flex";
+    document.getElementById("ErklärungSchrittDrei").style.display = "flex";
+   document.getElementById("FeldNutzerBeschriebungAufgabe").style.display = "flex";
+   document.getElementById("ButtonKI").style.display = "flex";
+
 
 }
+
+function generiereAufgabenKI(){
+
+}
+
+function speicherAufgabenart(art){
+    aufgabenart = art;
+}
+
+function zeigeDropdown() {
+    const container = document.getElementById("dropdownContainer");
+    container.classList.remove("versteckt");
+    container.classList.add("sichtbar");
+  }
+
+  
 
 function show (anything){
     document.querySelector('.textBox').value = anything;

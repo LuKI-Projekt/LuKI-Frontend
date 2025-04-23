@@ -5,9 +5,11 @@
   <title>LuKI</title>
   <!-- Layout & Struktur & Design-System laden -->
   <link rel="stylesheet" href="styleIndex.css">
-  <!--JavaScript laden-->>
+  <link rel="stylesheet" href="aufgabenEinfachText.css">
+  <!--JavaScript laden-->
   <script src="script.js" defer></script>
-  <script src="vorschau.js" defer> </script>
+  <script src="vorschau.js" defer></script>
+  <script src="nutzerWebsiteErstellen.js" defer></script>
 </head>
 
 <body>
@@ -65,8 +67,15 @@
      <!-- Vorschau generieren Button-->
      <button onclick="erstelleVorschau()" style="display: none;">Erstelle Vorschau </button >
      <textarea id="eingabeFeld" oninput="aktualisiereVorschau()" style="display: none;"></textarea>
+    
+
+    <!-- Website des Nutzers generieren -->
+    <button id = "ButtonNutzerWebsite" class="btn-orange" onclick="neueSeiteErstellen()">Erstelle Seite</button >
+
+<!-- Ende linke Seite -->
     </div>
 
+<!-- Vorschua (rechte Seite) -->
   <div class="vorschau">
     <h2>Vorschau</h2>
     <div id="vorschauFeld"></div>

@@ -2,9 +2,6 @@ var pictureNutzer = null;
 var aufgabenart = "";
 
 
-function changeText() {
-    document.querySelector('h1').textContent = 'Hallo, JavaScript!';
-}
 
 function aktualisiereVorschau() {
     const eingabe = document.getElementById("eingabeFeld").value;
@@ -13,8 +10,6 @@ function aktualisiereVorschau() {
 
 function Beschreibung(){
     LayoutNachSchrittEinsBeschreibung();
-
-
 }
 
 function Foto(){
@@ -90,6 +85,14 @@ function LayoutNachSchrittZwei(){
    document.getElementById("FeldNutzerBeschriebungAufgabe").style.display = "flex";
    document.getElementById("ButtonKI").style.display = "flex";
 
+
+}
+
+function LayoutNachSchrittDrei(){
+
+}
+
+function LayoutNachSchrittVier(){
 
 }
 

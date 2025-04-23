@@ -1,11 +1,17 @@
-var heading = "lol";
-var anzahlAufgaben = 1;
-var aufgaben = ["Was ist 2 + 2?"];
-var loesungen = ["4"];
 
-function erstelleVorschau() 
-{
+    function korrigiere(i) {
+      const eingabe = document.getElementById('loesung' + i).value.trim();
+      const korrektur = document.getElementById('korrektur' + i);
+      if (eingabe === loesungen[i]) {
+        korrektur.textContent = "Richtig!";
+        korrektur.className = "korrektur richtig";
+      } else {
+        korrektur.textContent = "Falsch! Die richtige Lösung ist " + loesungen[i];
+        korrektur.className = "korrektur falsch";
+      }
+    }
 
+    function erstelleVorschau() {
     const container = document.getElementById('AufgabeContainerVorschau');
 
     for (let i = 0; i < aufgaben.length; i++) {
@@ -42,7 +48,7 @@ function erstelleVorschau()
     
         container.appendChild(containerAufgabe);
     }
-  }
+}
 
   function korrigiere(aufgabenNr) {
     const eingabe = document.getElementById(`loesung${aufgabenNr}`).value.trim();
@@ -55,4 +61,5 @@ function erstelleVorschau()
         korrekturElement.textContent = `Falsch! Die richtige Lösung ist ${loesungen[aufgabenNr]}.`;
         korrekturElement.className = "korrektur falsch";
     }
-}
+}   
+  

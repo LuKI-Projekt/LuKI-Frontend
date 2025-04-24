@@ -43,7 +43,7 @@
       <img id="preview" style="max-width: 200px; display: none;">
     
     <!--Schritt 2 Elemente-->
-      <h2 id="SchrittZwei"style="display: none;"> 2. Schritt </h2>
+      <h2 id="SchrittZwei"style="display: none;"> <br> 2. Schritt </h2>
       <p id="ErklärungSchrittZwei" style="display: none;"> Wähle ein Aufgabentyp aus. </p>
     
       <!--Auswahl des Aufgabentypes-->
@@ -83,12 +83,14 @@
             <p for="schwierigerCheckbox">Die Aufgaben sollen immer schwieriger werden</p>
           </div>
         </div>
-        <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick=" renderAufgaben(); erstelleVorschau()">Aufgaben generieren</button >
+        <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick=" LayoutNachSchrittDrei(); renderAufgaben(); erstelleVorschau()">Aufgaben generieren</button >
       
        <!-- Schritt Vier - Aufgaben bearbeiten--> 
-          <div id="aufgabenContainer"></div>
-
-          <button onclick="neueAufgabe()" class="plus-button">+</button>
+       <h2 id="SchrittVier" style="display: none;"> <br> 4. Schritt </h2>
+       <p id="ErklärungSchrittVier" style="display: none;"> Es wurden die folgenden Aufgaben generiert. Diese kannst du jetzt überarbeiten bzw neue hinzufügen. 
+        Rechts ist die zugehörige Vorschau deiner Internetwebsite zu sehen. </p>
+        <div id="aufgabenContainer"></div>
+      <button id= "pluss-button-add" style="display: none;" onclick="neueAufgabe()" class="plus-button-add">+</button>
 
 
 
@@ -98,7 +100,7 @@
     -->
 
     <!-- Website des Nutzers generieren -->
-    <button id = "ButtonNutzerWebsite" class="btn-orange" onclick="neueSeiteErstellen()">Erstelle Seite</button >
+    <button id = "ButtonNutzerWebsite" style="display: none;" class="btn-orange" onclick="neueSeiteErstellen()">Erstelle Seite</button >
 
 <!-- Ende linke Seite -->
     </div>

@@ -122,12 +122,19 @@ function LayoutNachSchrittZwei(){
     document.getElementById("ErklärungSchrittDrei").style.display = "flex";
    document.getElementById("FeldNutzerBeschreibungAufgabe").style.display = "flex";
    document.getElementById("ButtonMehrPrompt").style.display = "flex";
-   document.getElementById("ButtonKI").style.display = "absolute";
+   document.getElementById("ButtonKI").style.display = "flex";
 
 
 }
 
 function LayoutNachSchrittDrei(){
+    document.getElementById("ErklärungSchrittDrei").style.display = "none";
+    document.getElementById("SchrittVier").style.display = "flex";
+    document.getElementById("ErklärungSchrittVier").style.display = "flex";
+   document.getElementById("FeldNutzerBeschreibungAufgabe").style.display = "flex";
+   document.getElementById("pluss-button-add").style.display = "flex";
+   document.getElementById("ButtonNutzerWebsite").style.display = "flex";
+
 
 }
 

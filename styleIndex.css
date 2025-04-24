@@ -199,9 +199,11 @@ footer {
    /* margin-top: 100px;*/
     width: 200px;
     height: 20px;
+    font-family: var(--font-heading);
   }
   
   .dropdown input{
+    font-family: var(--font-heading);
     position: relative;
     top: 0;
     left: 0;
@@ -220,7 +222,7 @@ footer {
   /*funktioniert nicht korrekt*/
   .dropdown::before
   {
-    content: 'bis';
+    content: ' ';
     position: relative;
     left: 200px;
     top: 10px;
@@ -234,7 +236,7 @@ footer {
     transition: 0.5s;
     pointer-events: none;
 
-  }
+  } 
 
 .dropdown.active::before
 {

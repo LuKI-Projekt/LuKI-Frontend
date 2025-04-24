@@ -3,6 +3,7 @@
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: var(--font-heading);
 }
 .korrektur {
     margin-top: 10px;

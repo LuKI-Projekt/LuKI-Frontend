@@ -61,7 +61,7 @@ function PasswortTesten(){
     if (PasswortKorrekt(NutzerEingegebenesPasswort )) 
     {
       zumIndex();
-      alert("drin :D juhuu")
+      
     } else {
         if (VersucheAnmeldungPasswort < 3){
         alert("Falsche Passwort eingegeben. Bitte versuchen Sie es erneut.");
@@ -75,7 +75,9 @@ function PasswortTesten(){
     
 }
 
-function zumIndex(){}
+function zumIndex(){
+  window.location.href = "index.html"; 
+}
 
 function Startlayout(){
 

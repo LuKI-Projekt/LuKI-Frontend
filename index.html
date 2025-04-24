@@ -6,10 +6,12 @@
   <!-- Layout & Struktur & Design-System laden -->
   <link rel="stylesheet" href="styleIndex.css">
   <link rel="stylesheet" href="aufgabenEinfachText.css">
+  <link rel="stylesheet" href="promptFeld.css">
   <!--JavaScript laden-->
   <script src="script.js" defer></script>
   <script src="vorschau.js" defer></script>
   <script src="nutzerWebsiteErstellen.js" defer></script>
+  <script src="promptAufgabenBearbeiten.js" defer></script>
 </head>
 
 <body>
@@ -61,14 +63,13 @@
   </br>
       <h2 id="SchrittDrei" style="display: none;"> <br><br> 3. Schritt </h2>
       <p id="ErklärungSchrittDrei" style="display: none;"> Beschreibung ergänzen als Prompt </p>
-      <input type="text" id="FeldNutzerBeschriebungAufgabe" placeholder="Es sollen 8 ähnliche Aufgaben generiert werden." style="display: none; width: 500px;">
-      <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick="generiereAufgabenKI(); erstelleVorschau()">Aufgaben generieren</button >
-      
+
         <div class="eingabe-container">
           <textarea id="FeldNutzerBeschreibungAufgabe" 
                     class="eingabe-textfeld"
-                    placeholder="Es sollen 8 ähnliche Aufgaben generiert werden."></textarea>
-          <button class="plus-button" onclick="zeigeZusatzfelder()">+</button>
+                    placeholder="Es sollen 8 ähnliche Aufgaben generiert werden."
+                    style="display: none;"></textarea>
+          <button id = "ButtonMehrPrompt"class="plus-button" onclick="zeigeZusatzfelder()" style="display: none;">+</button>
         </div>
         
         <div class="zusatzfelder" id="zusatzfelder">
@@ -82,7 +83,12 @@
             <p for="schwierigerCheckbox">Die Aufgaben sollen immer schwieriger werden</p>
           </div>
         </div>
+        <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick=" renderAufgaben(); erstelleVorschau()">Aufgaben generieren</button >
+      
+       <!-- Schritt Vier - Aufgaben bearbeiten--> 
+          <div id="aufgabenContainer"></div>
 
+          <button onclick="neueAufgabe()" class="plus-button">+</button>
 
 
 

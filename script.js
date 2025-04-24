@@ -120,8 +120,9 @@ function LayoutNachSchrittZwei(){
     document.getElementById("ErklärungSchrittZwei").style.display = "none";
     document.getElementById("SchrittDrei").style.display = "flex";
     document.getElementById("ErklärungSchrittDrei").style.display = "flex";
-   document.getElementById("FeldNutzerBeschriebungAufgabe").style.display = "flex";
-   document.getElementById("ButtonKI").style.display = "flex";
+   document.getElementById("FeldNutzerBeschreibungAufgabe").style.display = "flex";
+   document.getElementById("ButtonMehrPrompt").style.display = "flex";
+   document.getElementById("ButtonKI").style.display = "absolute";
 
 
 }
@@ -131,10 +132,6 @@ function LayoutNachSchrittDrei(){
 }
 
 function LayoutNachSchrittVier(){
-
-}
-
-function generiereAufgabenKI(){
 
 }
 

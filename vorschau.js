@@ -7,7 +7,7 @@ function erstelleVorschau()
 {
 
     const container = document.getElementById('AufgabeContainerVorschau');
-
+    container.innerHTML = "";
     for (let i = 0; i < aufgaben.length; i++) {
         const containerAufgabe = document.createElement('div');
         containerAufgabe.className = 'aufgabe';

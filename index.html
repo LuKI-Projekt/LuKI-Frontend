@@ -61,13 +61,35 @@
   </br>
       <h2 id="SchrittDrei" style="display: none;"> <br><br> 3. Schritt </h2>
       <p id="ErklärungSchrittDrei" style="display: none;"> Beschreibung ergänzen als Prompt </p>
-      <input type="text" id="FeldNutzerBeschriebungAufgabe" placeholder="Es sollen 8 ähnliche Aufgaben generiert werden." style="display: none;">
+      <input type="text" id="FeldNutzerBeschriebungAufgabe" placeholder="Es sollen 8 ähnliche Aufgaben generiert werden." style="display: none; width: 500px;">
       <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick="generiereAufgabenKI(); erstelleVorschau()">Aufgaben generieren</button >
       
-     <!-- Vorschau generieren Button-->
+        <div class="eingabe-container">
+          <textarea id="FeldNutzerBeschreibungAufgabe" 
+                    class="eingabe-textfeld"
+                    placeholder="Es sollen 8 ähnliche Aufgaben generiert werden."></textarea>
+          <button class="plus-button" onclick="zeigeZusatzfelder()">+</button>
+        </div>
+        
+        <div class="zusatzfelder" id="zusatzfelder">
+          <p>
+            Anzahl an Aufgaben:
+            <input id="anzahlAufgabenInput" type="number" min="1" max="100" style="width: 35px; padding: 5px; font-size: 14px;"oninput="änderePromptAnzahl()">
+          </p>
+          
+          <div class="checkbox-container">
+            <input type="checkbox" id="schwierigerCheckbox" onchange="änderePromptSchwierigkeit()">
+            <p for="schwierigerCheckbox">Die Aufgaben sollen immer schwieriger werden</p>
+          </div>
+        </div>
+
+
+
+
+     <!-- Vorschau generieren Button
      <button onclick="erstelleVorschau()" style="display: none;">Erstelle Vorschau </button >
      <textarea id="eingabeFeld" oninput="aktualisiereVorschau()" style="display: none;"></textarea>
-    
+    -->
 
     <!-- Website des Nutzers generieren -->
     <button id = "ButtonNutzerWebsite" class="btn-orange" onclick="neueSeiteErstellen()">Erstelle Seite</button >

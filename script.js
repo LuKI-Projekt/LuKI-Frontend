@@ -12,6 +12,44 @@ function Beschreibung(){
     LayoutNachSchrittEinsBeschreibung();
 }
 
+function zeigeZusatzfelder() {
+    const feld = document.getElementById("zusatzfelder");
+    if (feld.style.display == "block"){
+        feld.style.display = "none";
+    }else{feld.style.display = "block";} 
+  }
+
+  function änderePromptSchwierigkeit() { 
+    const schwieriger = document.getElementById("schwierigerCheckbox").checked;
+    const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
+    alert(feld.value);
+    const satz = " Die Aufgaben sollen stufenweise schwieriger werden.";
+
+    if (schwieriger) {
+        if (!feld.value.includes(satz)) {
+            feld.value = feld.value + satz;
+            alert(feld.value);
+        }
+    } else {
+        feld.value = feld.value.replace(satz, "").trim();
+        alert("in2");
+    }
+}
+
+function änderePromptAnzahl() {
+    const anzahl = document.getElementById("anzahlAufgabenInput").value;
+    const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
+    const regex = /Es sollen \d+ Aufgaben generiert werden\.?/;
+
+    // Alten Satz entfernen, falls vorhanden
+    feld.value = feld.value.replace(regex, "").trim();
+
+    // Neuen Satz hinzufügen
+    if (anzahl) {
+        feld.value += (feld.value ? " " : "") + ` Es sollen ${anzahl} Aufgaben generiert werden.`;
+    }
+}
+
 function Foto(){
     LayoutNachSchrittEinsFoto();
     document.getElementById('FeldUploadInput').addEventListener('change', function(event) {

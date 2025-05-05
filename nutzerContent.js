@@ -1,4 +1,4 @@
-
+/*
     function korrigiere(i) {
       const eingabe = document.getElementById('loesung' + i).value.trim();
       const korrektur = document.getElementById('korrektur' + i);
@@ -11,55 +11,38 @@
       }
     }
 
-    function erstelleVorschau() {
-    const container = document.getElementById('AufgabeContainerVorschau');
+  */
+ /* Rausgenommen muss ggf wieder rein
+function erstelleVorschau() {
+      allert(aufgabenart);
+      const container = document.getElementById('AufgabeContainerVorschau');
+       if (aufgabenart ="Einfach"){
+        EinfacherText(container);}
+        if (aufgabenart ="Drag"){
+          DragDrop(container);}
+}*/
 
-    for (let i = 0; i < aufgaben.length; i++) {
-        const containerAufgabe = document.createElement('div');
-        containerAufgabe.className = 'aufgabe';
-    
-        const headingAufgabe = document.createElement('h2');
-        headingAufgabe.textContent = 'Aufgabe ' + (i + 1);
-    
-        const aufgabenText = document.createElement('p');
-        aufgabenText.textContent = aufgaben[i];
-    
-        const eingabefeld = document.createElement('input');
-        eingabefeld.type = 'text';
-        eingabefeld.placeholder = 'Deine Lösung';
-        eingabefeld.id = `loesung${i}`; // wichtig für Zugriff
-    
-        const button = document.createElement('button');
-        button.id = `button${i}`;
-        button.textContent = 'Korrigieren';
-        button.onclick = function () {
-            korrigiere(i);
-        };
-    
-        const korrekturText = document.createElement('p');
-        korrekturText.id = `korrektur${i}`;
-        korrekturText.className = 'korrektur';
-    
-        containerAufgabe.appendChild(headingAufgabe);
-        containerAufgabe.appendChild(aufgabenText);
-        containerAufgabe.appendChild(eingabefeld);
-        containerAufgabe.appendChild(button);
-        containerAufgabe.appendChild(korrekturText);
-    
-        container.appendChild(containerAufgabe);
-    }
+
+/* CHAT methoden*/
+
+function toggleChat() {
+  var chat = document.getElementById('chatWidget');
+  var toggleIcon = document.getElementById('toggleIcon');
+  chat.classList.toggle('minimized');
+  toggleIcon.innerText = chat.classList.contains('minimized') ? '+' : '−';
 }
 
-  function korrigiere(aufgabenNr) {
-    const eingabe = document.getElementById(`loesung${aufgabenNr}`).value.trim();
-    const korrekturElement = document.getElementById(`korrektur${aufgabenNr}`);
-    
-    if (eingabe === loesungen[aufgabenNr]) {
-        korrekturElement.textContent = "Richtig!";
-        korrekturElement.className = "korrektur richtig";
-    } else {
-        korrekturElement.textContent = `Falsch! Die richtige Lösung ist ${loesungen[aufgabenNr]}.`;
-        korrekturElement.className = "korrektur falsch";
-    }
-}   
+function sendMessage() {
+  var input = document.getElementById('userInput');
+  var message = input.value.trim();
+  if (message) {
+    var chatMessages = document.getElementById('chatMessages');
+    var newMessage = document.createElement('div');
+    newMessage.className = 'message user-message';
+    newMessage.innerText = message;
+    chatMessages.appendChild(newMessage);
+    input.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+}
   

@@ -3,11 +3,23 @@ var anzahlAufgaben = 1;
 var aufgaben = ["Was ist 2 + 2?"];
 var loesungen = ["4"];
 
+function erstelleVorschau() {
+    alert(aufgabenart);
+    const container = document.getElementById('AufgabeContainerVorschau');
+    container.innerHTML = "";
+     if (aufgabenart == "Einfach"){
+      EinfacherText(container);}
+      if (aufgabenart =="Drag"){
+        DragDrop(container);}
+}
+
+/*
 function erstelleVorschau() 
 {
 
     const container = document.getElementById('AufgabeContainerVorschau');
     container.innerHTML = "";
+
     for (let i = 0; i < aufgaben.length; i++) {
         const containerAufgabe = document.createElement('div');
         containerAufgabe.className = 'aufgabe';
@@ -55,4 +67,4 @@ function erstelleVorschau()
         korrekturElement.textContent = `Falsch! Die richtige Lösung ist ${loesungen[aufgabenNr]}.`;
         korrekturElement.className = "korrektur falsch";
     }
-}
+}*/

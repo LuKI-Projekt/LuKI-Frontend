@@ -5,9 +5,13 @@
   <title>LuKI</title>
   <!-- Layout & Struktur & Design-System laden -->
   <link rel="stylesheet" href="styleNutzer.css">
-  <link rel="stylesheet" href="aufgabenEinfachText.css">
+  <link rel="stylesheet" href="aufgabeEinfachText.css">
+  <link rel="stylesheet" href="aufgabeDragDrop.css">
+  <link rel="stylesheet" href="stylechat.css">
   <!--JavaScript laden-->
   <script src="nutzerContent.js" defer></script>
+  <script src="aufgabeDragDrop.js" defer></script>
+  <script src="aufgabeEinfacherText.js" defer></script>
 </head>
 <script>
     const aufgaben = ["Was ist 2 + 2?"];
@@ -27,8 +31,29 @@
 
 <div id="AufgabeContainerVorschau"></div>
 
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header" onclick="toggleChat()">
+    <div class="chat-header-left">
+      <img src="logo.jpg" alt="Avatar">
+      <p>LuKI</p>
+    </div>
+    <div id="toggleIcon">−</div>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="message">Hallo! Wie kann ich dir helfen?</div>
+  </div>
+
+  <div class="chat-input">
+    <textarea id="userInput" placeholder="Schreibe eine Nachricht..."></textarea>
+    <button onclick="sendMessage()">Senden</button>
+  </div>
+</div>
+
+
 <script>
    window.onload = () => {
+    aufgabenart
       erstelleVorschau();
     };
 </script>

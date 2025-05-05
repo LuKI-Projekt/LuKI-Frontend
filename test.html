@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag & Drop - Bruchrechnung mit Korrektur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .task-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .task {
+      background: white;
+      border: 2px dashed #0078D7;
+      border-radius: 10px;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+    }
+
+    .dropzone {
+      background: #e0e0e0;
+      border: 2px dashed #aaa;
+      width: 180px;
+      height: 40px;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .options{
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .option {
+      background: #0078D7;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: grab;
+      font-size: 1.1em;
+      transition: opacity 0.3s ease;
+    }
+
+    .correct {
+      background-color: #8BC34A !important;
+      border-color: #4CAF50 !important;
+    }
+
+    .incorrect {
+      background-color: #F44336 !important;
+      border-color: #F44336 !important;
+    }
+
+    #checkButton {
+      display: block;
+      margin: 40px auto;
+      padding: 10px 30px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    #checkButton:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Drag & Drop: Bruchrechnen</h1>
+
+<div class="task-container">
+  <div class="task" data-answer="3/4">
+    1/2 + 1/4 =
+    <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div>
+  <div class="task" data-answer="5/8">
+    1/2 + 1/8 =
+    <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div>
+  <div class="task" data-answer="1/2">
+    3/4 - 1/4 =
+    <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div>
+  <div class="task" data-answer="7/8">
+    3/4 + 1/8 =
+    <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" draggable="true" ondragstart="drag(event)" id="3/4">3/4</div>
+  <div class="option" draggable="true" ondragstart="drag(event)" id="5/8">5/8</div>
+  <div class="option" draggable="true" ondragstart="drag(event)" id="1/2">1/2</div>
+  <div class="option" draggable="true" ondragstart="drag(event)" id="7/8">7/8</div>
+</div>
+
+<button id="checkButton" onclick="checkAnswers()">Korrigieren</button>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var dropzone = ev.target;
+
+  // Überprüfen, ob das Dropzone bereits etwas enthält und ob der Button schon verwendet wurde
+  if (dropzone.classList.contains('dropzone') && dropzone.innerHTML === "") {
+    dropzone.innerHTML = data;
+    // Entferne den Button aus den verfügbaren Optionen, wenn er bereits verwendet wurde
+    var draggedElement = document.getElementById(data);
+    draggedElement.style.opacity = '0';  // Der Button wird unsichtbar
+    draggedElement.setAttribute('draggable', 'false'); // Der Button wird nicht mehr dragbar
+  }
+}
+
+function checkAnswers() {
+  var tasks = document.querySelectorAll('.task');
+  
+  tasks.forEach(task => {
+    var dropzone = task.querySelector('.dropzone');
+    var userAnswer = dropzone.textContent.trim();
+    var correctAnswer = task.getAttribute('data-answer');
+
+    dropzone.classList.remove('correct', 'incorrect');
+    if (userAnswer === correctAnswer) {
+      dropzone.classList.add('correct');
+    } else {
+      dropzone.classList.add('incorrect');
+    }
+  });
+}
+</script>
+
+</body>
+</html>

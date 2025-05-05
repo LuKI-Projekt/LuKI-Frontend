@@ -1,0 +1,68 @@
+.task-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.task {
+      background: white;
+      border: 2px dashed #ff7f2a;
+      border-radius: 10px;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      font-family: var(--font-heading);
+    }
+
+    .dropzoneDD {
+      background: #e0e0e0;
+      border: 2px dashed #aaa;
+      width: 180px;
+      height: 40px;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+      color: #555;
+      font-family: var(--font-heading);
+    }
+
+    .optionsDD {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .optionDD {
+      background: #ff7f2a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: grab;
+      font-size: 1.1em;
+      transition: opacity 0.3s ease;
+      font-family: var(--font-heading);
+    }
+
+    .correct {
+      background-color: #8BC34A !important;
+      border-color: #4CAF50 !important;
+    }
+
+    .incorrect {
+      background-color: #F44336 !important;
+      border-color: #F44336 !important;
+    }

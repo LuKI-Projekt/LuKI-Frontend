@@ -1,10 +1,17 @@
 /*var aufgaben = ["Was ist 2 + 2?"];
-var loesungen = ["4"]; */
+var loesungen = ["4"]; 
+
+
+
+
+ACHTUNG DIES MUSS KOMBIERT WERDEN VON NUTZERSEITE!!! NICHT AKLTUELL*/
 
 function neueSeiteErstellen() {
   const neueSeite = window.open(); // Neues Fenster / Tab öffnenML;
 
   neueSeite.document.write(`
+
+
 
 <!DOCTYPE html>
 <html lang="de">
@@ -36,6 +43,25 @@ function neueSeiteErstellen() {
 </div>
 
 <div id="AufgabeContainerVorschau"></div>
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header" onclick="toggleChat()">
+    <div class="chat-header-left">
+      <img src="https://via.placeholder.com/40" alt="Avatar">
+      <div>Support</div>
+    </div>
+    <div id="toggleIcon">−</div>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="message">Hallo! Wie kann ich dir helfen?</div>
+  </div>
+
+  <div class="chat-input">
+    <textarea id="userInput" placeholder="Schreibe eine Nachricht..."></textarea>
+    <button onclick="sendMessage()">Senden</button>
+  </div>
+</div>
+
 
 <script>
    window.onload = () => {

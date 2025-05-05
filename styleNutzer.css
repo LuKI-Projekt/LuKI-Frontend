@@ -28,11 +28,14 @@ margin: 0;
 
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: var(--color-footer);
   color: #5a3e26;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
+  padding: 3px;
+  font-size: 4px;
 }
 
 .btn-orange {

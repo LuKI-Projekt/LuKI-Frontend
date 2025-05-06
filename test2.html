@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multiple Choice Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f2f2f2;
+    }
+
+    .quiz-container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0078D7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <div class="question">Wie viel ist 1/2 + 1/4?</div>
+    <ul class="options">
+      <li><label><input type="radio" name="answer" value="1/2" /> 1/2</label></li>
+      <li><label><input type="radio" name="answer" value="3/4" /> 3/4</label></li>
+      <li><label><input type="radio" name="answer" value="2/3" /> 2/3</label></li>
+      <li><label><input type="radio" name="answer" value="1" /> 1</label></li>
+    </ul>
+    <button onclick="checkAnswer()">Antwort prüfen</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const correctAnswer = "3/4";
+      const radios = document.getElementsByName("answer");
+      let selected = "";
+
+      for (const radio of radios) {
+        if (radio.checked) {
+          selected = radio.value;
+        }
+      }
+
+      const result = document.getElementById("result");
+
+      if (selected === "") {
+        result.textContent = "Bitte wähle eine Antwort aus.";
+        result.className = "";
+      } else if (selected === correctAnswer) {
+        result.textContent = "Richtig!";
+        result.className = "correct";
+      } else {
+        result.textContent = "Leider falsch. Die richtige Antwort ist 3/4.";
+        result.className = "incorrect";
+      }
+    }
+  </script>
+
+</body>
+</html>

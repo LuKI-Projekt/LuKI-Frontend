@@ -4,7 +4,7 @@ var loesungen = ["4"];
 
 
 
-ACHTUNG DIES MUSS KOMBIERT WERDEN VON NUTZERSEITE!!! NICHT AKLTUELL*/
+ACHTUNG DIES MUSS TEilweise KOpIERT WERDEN VON NUTZERSEITE!!! NICHT AKLTUELL*/
 
 function neueSeiteErstellen() {
   const neueSeite = window.open(); // Neues Fenster / Tab öffnenML;

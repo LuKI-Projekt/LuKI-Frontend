@@ -5,17 +5,23 @@
   <title>LuKI</title>
   <!-- Layout & Struktur & Design-System laden -->
   <link rel="stylesheet" href="styleIndex.css">
-  <link rel="stylesheet" href="aufgabeEinfachText.css">
+  <link rel="stylesheet" href="dropDownMenue.css">
   <link rel="stylesheet" href="promptFeld.css">
-  <link rel="stylesheet" href="aufgabeDragDrop.css">
+ <link rel="stylesheet" href="aufgabeDragDrop.css">
+  <link rel="stylesheet" href="aufgabeEinfachText.css">
+  <link rel="stylesheet" href="aufgabeMulti.css">
  
   <!--JavaScript laden-->
   <script src="script.js" defer></script>
   <script src="vorschau.js" defer></script>
+  <script src="dropDownMenue.js" defer></script>
   <script src="nutzerWebsiteErstellen.js" defer></script>
   <script src="promptAufgabenBearbeiten.js" defer></script>
   <script src="aufgabeDragDrop.js" defer></script>
   <script src="aufgabeEinfacherText.js" defer></script>
+  <script src="aufgabeMulti.js" defer></script>
+  <script src="prompten.js" defer></script>
+
 </head>
 
 <body>
@@ -75,7 +81,7 @@
                     style="display: none;"></textarea>
           <button id = "ButtonMehrPrompt"class="plus-button" onclick="zeigeZusatzfelder()" style="display: none;">+</button>
         </div>
-        
+        <!-- Zustaz für Prompten--> 
         <div class="zusatzfelder" id="zusatzfelder">
           <p>
             Anzahl an Aufgaben:
@@ -86,6 +92,21 @@
             <input type="checkbox" id="schwierigerCheckbox" onchange="änderePromptSchwierigkeit()">
             <p for="schwierigerCheckbox">Die Aufgaben sollen immer schwieriger werden</p>
           </div>
+
+          <div class="checkbox-container">
+            <p>
+              Schwierigkeitsgrad der Aufgabe:
+            <input type="checkbox" id="leichtSchwierigkeitsgradCheckbox" onchange="ändereSchwierigkeitsgrad('leicht')">
+            <p for="schwierigerCheckbox">Leicht</p>
+            <input type="checkbox" id="mittelSchwierigkeitsgradCheckbox" onchange="ändereSchwierigkeitsgrad('mittel')">
+            <p for="schwierigerCheckbox">Mittel</p>
+            <input type="checkbox" id="schwerSchwierigkeitsgradCheckbox" onchange="ändereSchwierigkeitsgrad('schwer')">
+            <p for="schwierigerCheckbox">Schwer</p>
+          </div>
+
+
+
+
         </div>
         <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick=" LayoutNachSchrittDrei(); renderAufgaben(); erstelleVorschau()">Aufgaben generieren</button >
       

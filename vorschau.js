@@ -2,16 +2,33 @@ var heading = "lol";
 var anzahlAufgaben = 1;
 var aufgaben = ["Was ist 2 + 2?"];
 var loesungen = ["4"];
+var fragenMulti = 
+[
+    ["Wie viel ist 1/2 + 1/4?", ["1/2", "3/4", "1", "2/3"], [0,1,0,0]],
+    ["Wie viel ist 2/3 - 1/3?", ["1/3", "1/2", "2/3", "0"], [1,0,0,0]],
+    ["Was ist 3/5 + 1/5?", ["4/10", "3/10", "4/5", "1"], [0,0,1,0]],
+    ["Wie viel ist 1 - 1/4?", ["1/2", "3/4", "1/4", "2/4"], [0,1,0,0]]
+  ];
 
 function erstelleVorschau() {
-    alert(aufgabenart);
     const container = document.getElementById('AufgabeContainerVorschau');
     container.innerHTML = "";
      if (aufgabenart == "Einfach"){
       EinfacherText(container);}
       if (aufgabenart =="Drag"){
         DragDrop(container);}
+        if (aufgabenart =="Multi"){
+            Multi(container);}
+        
 }
+
+
+
+function aktualisiereVorschau() {
+    const eingabe = document.getElementById("eingabeFeld").value;
+    document.getElementById("vorschauFeld").innerHTML = eingabe.replace(/\n/g, "<br>");
+  }
+
 
 /*
 function erstelleVorschau() 

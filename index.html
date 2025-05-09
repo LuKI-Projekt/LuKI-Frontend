@@ -21,6 +21,7 @@
   <script src="aufgabeEinfacherText.js" defer></script>
   <script src="aufgabeMulti.js" defer></script>
   <script src="prompten.js" defer></script>
+  <script src="backendKI.js" defer></script>
 
 </head>
 
@@ -81,6 +82,8 @@
                     style="display: none;"></textarea>
           <button id = "ButtonMehrPrompt"class="plus-button" onclick="zeigeZusatzfelder()" style="display: none;">+</button>
         </div>
+
+
         <!-- Zustaz für Prompten--> 
         <div class="zusatzfelder" id="zusatzfelder">
           <p>
@@ -94,6 +97,12 @@
           </div>
 
           <div class="checkbox-container">
+            <input type="checkbox" id="lösungbeiKorrektur" onchange="ändereLösungbeiKorrektur()">
+            <p for="lösungbeiKorrektur"> Wenn die Aufgabe falsch gelöst wird, soll die korrekete Lösung angezeigt werden.</p>
+          </div>
+
+          
+          <div class="checkbox-container">
             <p>
               Schwierigkeitsgrad der Aufgabe:
             <input type="checkbox" id="leichtSchwierigkeitsgradCheckbox" onchange="ändereSchwierigkeitsgrad('leicht')">
@@ -103,12 +112,35 @@
             <input type="checkbox" id="schwerSchwierigkeitsgradCheckbox" onchange="ändereSchwierigkeitsgrad('schwer')">
             <p for="schwierigerCheckbox">Schwer</p>
           </div>
+          
+          <p>
+           Das Ziel der Aufgabe ist, dass die SchülerInnen ... 
+          <textarea id="zielAufgabenInput" rows="2" style="width: 300px; font-family: var(--font-main); padding: 5px; font-size: 14px; resize: vertical; overflow: auto;" placeholder="üben Integrale zu berechnen" oninput="ändereZielAufgabe()"></textarea></p>
+        </p>
 
+        <div class="checkbox-container">
+          <input type="checkbox" id="mitKontextCheckbox" onchange="ändereKontext()">
+          <p for="mitKontextCheckbox"> Mit Kontext</p>
+        </div>
 
+        <div id = "kontextContainer" style="display: none;"> 
+          <p>
+      Der Kontext der Aufgabe soll..
+      <textarea 
+        id="KontextAufgabenInput" 
+        rows="2" 
+        style="width: 300px; font-family: var(--font-main); padding: 5px; font-size: 14px; resize: vertical; overflow: auto;" 
+        placeholder="das bestimmen eines Wasservolumes sein" 
+        oninput="ändereKontextInhalt()"
+      ></textarea>
+    </p>
+        </div>
+
+    
 
 
         </div>
-        <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick=" LayoutNachSchrittDrei(); renderAufgaben(); erstelleVorschau()">Aufgaben generieren</button >
+        <button id = "ButtonKI" class="btn-orange" style="display: none;" onclick=" createAufgabe();LayoutNachSchrittDrei(); renderAufgaben(); erstelleVorschau(); ">Aufgaben generieren</button >
       
        <!-- Schritt Vier - Aufgaben bearbeiten--> 
        <h2 id="SchrittVier" style="display: none;"> <br> 4. Schritt </h2>

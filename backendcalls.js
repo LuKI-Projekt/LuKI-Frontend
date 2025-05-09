@@ -1,9 +1,13 @@
+var email = "";
+var password = "";
+
 function createBasicAuthHeader(username, password) {
     const credentials = username + ':' + password;
     const encodedCredentials = btoa(credentials);
     return "Basic " + encodedCredentials;
 }
 
+/*
 async function helloworld(name) {
     const url = "http://lukiapp.click:8080/helloworld?name=".concat(name);
 
@@ -23,8 +27,9 @@ async function helloworld(name) {
         console.error(error.message);
     }
 }
+    */
 
-async function createTeacherUser(email, password) {
+async function createTeacherUser() {
     const url = "http://lukiapp.click:8080/teacherusers";
 
     try {
@@ -49,7 +54,7 @@ async function createTeacherUser(email, password) {
         console.error(error.message);
     }
 }
-
+/*
 async function allTeacherUsers() {
     const url = "http://lukiapp.click:8080/teacherusers";
 
@@ -96,3 +101,5 @@ console.log(helloworld("Bea"));
 console.log(createTeacherUser("teeacher.test@test.test", "se"));
 console.log(allTeacherUsers());
 console.log(findTeacherUser(1, "teeacher.test@test.test", "se"))
+*/
+

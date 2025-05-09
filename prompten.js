@@ -1,3 +1,4 @@
+var anzahl
 //zeigt die Hilfen zum Prompten
 function zeigeZusatzfelder() {
     const feld = document.getElementById("zusatzfelder");
@@ -22,7 +23,7 @@ function zeigeZusatzfelder() {
 }
 // ändert im Prompt die Anzahl der Aufgaben
 function änderePromptAnzahl() {
-    const anzahl = document.getElementById("anzahlAufgabenInput").value;
+    anzahl = document.getElementById("anzahlAufgabenInput").value;
     const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
     const regex = /Es sollen \d+ Aufgaben generiert werden\.?/;
 
@@ -35,14 +36,83 @@ function änderePromptAnzahl() {
     }
 }
 
+function ändereZielAufgabe() {
+    // Den Wert aus dem Eingabefeld holen
+    let ziel = document.getElementById("zielAufgabenInput").value.replace(/\./g, ' ');
+    const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
 
-function ändereZielAufgabe(){}
+    // Regex, um den alten Satz zu finden (beginnt mit "Das Ziel der Aufgabe ist")
+    const regex = /Das Ziel der Aufgabe ist, dass die SchülerInnen[^.]*\.?/;
 
-function ändereZahlenwert(){}
+    // Wenn der neue Zielwert nicht leer ist, füge ihn hinzu
+    if (ziel) {
+        ziel = ziel.trim();
+        
+         // Alten Satz entfernen, falls vorhanden
+        feld.value = feld.value.replace(regex, "").trim();
+        // neu setzen
+        feld.value += (feld.value ? " " : "") + `Das Ziel der Aufgabe ist, dass die SchülerInnen ${ziel}.`;
+    }
+}
 
-function ändereKontext(){}
 
-function ändereLösungbeiKorrektur(){}
+
+
+
+function ändereZahlenwert(){
+    // Natürliche Zahlen
+    // Ganze Zahlen
+    // Rationale Zahle mit so viele Nachkommastellen
+    // Reele Zahle mit so viele Nachkommastellen
+}
+
+function ändereKontext(){
+    
+    const kontextJA = document.getElementById("mitKontextCheckbox").checked;
+    const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
+    const containerk = document.getElementById("kontextContainer");
+
+    if (kontextJA) {
+    containerk.style.display = "block"; // sichtbar machen
+  } else {
+    containerk.style.display = "none"; // ausblenden
+  }
+}
+
+function ändereKontextInhalt(){
+
+     // Den Wert aus dem Eingabefeld holen
+     let kontext = document.getElementById("KontextAufgabenInput").value.replace(/\./g, ' ');
+     const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
+ 
+     // Regex, um den alten Satz zu finden (beginnt mit "Das Ziel der Aufgabe ist")
+     const regex = /Der Kontext der Aufgabe soll[^.]*\.?/;
+ 
+     // Wenn der neue Zielwert nicht leer ist, füge ihn hinzu
+     if (kontext) {
+        kontext = kontext.trim();
+         
+          // Alten Satz entfernen, falls vorhanden
+         feld.value = feld.value.replace(regex, "").trim();
+         // neu setzen
+         feld.value += (feld.value ? " " : "") + `Der Kontext der Aufgabe soll${kontext}.`;
+     }
+}
+
+function ändereLösungbeiKorrektur(){
+
+    const loesungAnzeige = document.getElementById("lösungbeiKorrektur").checked;
+    const feld = document.getElementById("FeldNutzerBeschreibungAufgabe");
+    const satz = " Die Aufgaben sollen bei falscher Beantwortung die Lösung anzeigen.";
+
+    if (loesungAnzeige) {
+        if (!feld.value.includes(satz)) {
+            feld.value = feld.value + satz;
+        }
+    } else {
+        feld.value = feld.value.replace(satz, "").trim();
+    }
+}
 
 
 function ändereSchwierigkeitsgrad(grad) {
